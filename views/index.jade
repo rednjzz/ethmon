@@ -1,0 +1,97 @@
+extends layout
+
+block content
+    // Wrapper
+    .container
+        ul.tabs
+            li.tab-link.current(data-tab='tab-1') 전체 모니터
+            li.tab-link(data-tab='tab-2') 에러 모니터
+            li.tab-link(data-tab='tab-3') 낮은 해시 모니터
+            li.tab-link(data-tab='tab-4') 오프라인 모니터
+        #tab-1.tab-content.current
+            #wrapper
+                // Miner info
+                #minerInfo
+                    h2= title
+                    table
+                        thead
+                            th Name
+                            th Host
+                            th Uptime
+                            th ETH/ETC&nbsp;Stats
+                            th DCR/SIA&nbsp;Stats
+                            if hashrates
+                                th ETH/ETC&nbsp;HR
+                                th DCR/SIA&nbsp;HR
+                            th Temp:Fan
+                            th Pools
+                            th Ver
+                            th Comments
+                        tbody
+                p#minerSummary
+                p#lastUpdated
+                // /Miner info
+            // /Wrapper
+        #tab-2.tab-content
+            #err-wrapper
+                // Miner info
+                #err-minerInfo
+                    h2= err-title
+                    table
+                        thead
+                            th Name
+                            th Host
+                            th Uptime
+                            th ETH/ETC&nbsp;Stats
+                            th DCR/SIA&nbsp;Stats
+                            if hashrates
+                                th ETH/ETC&nbsp;HR
+                                th DCR/SIA&nbsp;HR
+                            th Temp:Fan
+                            th Pools
+                            th Ver
+                            th Comments
+                        tbody
+                    p#err-lastUpdated
+                // /Miner info
+            // /Wrapper
+        #tab-3.tab-content
+            #lowhash-wrapper
+                // Miner info
+                #lowhash-minerInfo
+                    h2= lowhash-title
+                    table
+                        thead
+                            th Name
+                            th Host
+                            th Uptime
+                            th ETH/ETC&nbsp;Stats
+                            th DCR/SIA&nbsp;Stats
+                            if hashrates
+                                th ETH/ETC&nbsp;HR
+                                th DCR/SIA&nbsp;HR
+                            th Temp:Fan
+                            th Pools
+                            th Ver
+                            th Comments
+                        tbody
+                    p#lowhash-minerSummary
+                    p#lowhash-lastUpdated
+                // /Miner info
+            // /Wrapper
+        #tab-4.tab-content
+            #offline-wrapper
+                // Miner info
+                #offline-minerInfo
+                    h2= offline-title
+                    table
+                        thead
+                            th Name
+                            th Host
+                            th &nbsp&nbsp&nbsp&nbsp OffLine Comments &nbsp&nbsp&nbsp&nbsp
+                            th Comments
+                        tbody
+                    p#offline-lastUpdated
+                // /Miner info
+            // /Wrapper
+
